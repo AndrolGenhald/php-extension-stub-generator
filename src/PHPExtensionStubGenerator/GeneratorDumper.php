@@ -7,6 +7,8 @@ use Generator;
 use Laminas\Code\Generator\ClassGenerator;
 use Laminas\Code\Generator\DocBlock\Tag\VarTag;
 use Laminas\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Generator\InterfaceGenerator;
+use Laminas\Code\Generator\TraitGenerator;
 use Laminas\Code\Reflection\ClassReflection;
 use ReflectionExtension;
 use PHPExtensionStubGenerator\LaminasCode\ {
@@ -95,17 +97,17 @@ class GeneratorDumper
         foreach ($this->reflectionExtension->getClasses() as $_fqcn => $phpClassReflection) {
             $classReflection = new ClassReflection($phpClassReflection->getName());
 
-            // Get property types
-            $propertyTypes = [];
-            foreach ($classReflection->getProperties() as $property) {
-                $propertyTypes[$property->getName()] = $property->getType();
+            if ($classReflection->isInterface()) {
+                $classGenerator = InterfaceGenerator::fromReflection($classReflection);
+            } elseif ($classReflection->isTrait()) {
+                $classGenerator = TraitGenerator::fromReflection($classReflection);
+            } else {
+                $classGenerator = ClassGenerator::fromReflection($classReflection);
             }
-
-            $classGenerator = ClassGenerator::fromReflection($classReflection);
 
             // Set docblock @var tag for properties
             foreach ($classGenerator->getProperties() as $property) {
-                $propertyType = $propertyTypes[$property->getName()] ?? null;
+                $propertyType = $classReflection->getProperty($property->getName())->getType();
                 if ($propertyType !== null) {
                     $property->setDocBlock(new DocBlockGenerator(null, null, [new VarTag(null, (string) $propertyType)]));
                 }
