@@ -10,7 +10,8 @@
     },
     "require-dev": {
         "ext-phar": "*",
-        "phpunit/phpunit": "^9.0"
+        "phpunit/phpunit": "^9.0",
+        "vimeo/psalm": "4.20"
     },
     "bin" : [
         "php-extension-stub-generator"

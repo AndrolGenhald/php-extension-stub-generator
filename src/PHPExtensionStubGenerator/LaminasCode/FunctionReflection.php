@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace PHPExtensionStubGenerator\LaminasCode;
 
+use Laminas\Code\Reflection\DocBlock\Tag\ReturnTag;
 use Laminas\Code\Reflection\DocBlockReflection;
 use Laminas\Code\Reflection\FunctionReflection as BaseFunctionReflection;
 use Laminas\Code\Reflection\Exception;
@@ -53,13 +54,29 @@ class FunctionReflection extends BaseFunctionReflection
      *
      * @param string $format
      * @return array|string
+     *
+     * @psalm-template TFormat of string
+     * @psalm-param TFormat $format
+     * @psalm-return (TFormat is self::PROTOTYPE_AS_STRING ? string : array{
+     *     namespace: string,
+     *     name: string,
+     *     return: string,
+     *     arguments: array<string, array{
+     *         type: ?string,
+     *         required: bool,
+     *         by_ref: bool,
+     *         default: mixed,
+     *     }>,
+     * })
      */
     public function getPrototype($format = self::PROTOTYPE_AS_ARRAY)
     {
         $docBlock    = $this->getDocBlock();
         if ($docBlock !== false) {
             $return      = $docBlock->getTag('return');
+            assert($return instanceof ReturnTag);
             $returnTypes = $return->getTypes();
+            assert(!empty($returnTypes));
             $returnType  = count($returnTypes) > 1 ? implode('|', $returnTypes) : $returnTypes[0];
         } else {
             $returnType = 'mixed';

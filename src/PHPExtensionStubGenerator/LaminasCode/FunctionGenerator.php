@@ -15,7 +15,21 @@ namespace PHPExtensionStubGenerator\LaminasCode;
 
 class FunctionGenerator
 {
-    public static function generateByPrototypeArray(array $prototype)
+    /**
+     * @param array{
+     *     namespace: string,
+     *     name: string,
+     *     return: string,
+     *     arguments: array<string, array{
+     *         type: ?string,
+     *         required: bool,
+     *         by_ref: bool,
+     *         default: mixed,
+     *     }>,
+     * } $prototype
+     * @return non-empty-string
+     */
+    public static function generateByPrototypeArray(array $prototype): string
     {
         $line = 'function' . ' ' . $prototype['name'] . '(';
         $args = [];
@@ -32,5 +46,4 @@ class FunctionGenerator
 
         return $line;
     }
-
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="4.20.0@f82a70e7edfc6cf2705e9374c8a0b6a974a779ed">
+  <file src="src/PHPExtensionStubGenerator/Console/DumpCommand.php">
+    <UnusedClass occurrences="1">
+      <code>DumpCommand</code>
+    </UnusedClass>
+  </file>
+  <file src="src/PHPExtensionStubGenerator/GeneratorDumper.php">
+    <ArgumentTypeCoercion occurrences="1">
+      <code>$function_name</code>
+    </ArgumentTypeCoercion>
+    <MixedArgumentTypeCoercion occurrences="1">
+      <code>$namespaces</code>
+    </MixedArgumentTypeCoercion>
+    <MixedAssignment occurrences="1">
+      <code>$constName</code>
+    </MixedAssignment>
+    <PossiblyUnusedMethod occurrences="2">
+      <code>getDocBlockGenerator</code>
+      <code>setDocBlockGenerator</code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/PHPExtensionStubGenerator/LaminasCode/FunctionReflection.php">
+    <ImplementedReturnTypeMismatch occurrences="1">
+      <code>DocBlockReflection|false</code>
+    </ImplementedReturnTypeMismatch>
+  </file>
+  <file src="src/PHPExtensionStubGenerator/LaminasCode/ParameterReflection.php">
+    <ArgumentTypeCoercion occurrences="1">
+      <code>$phpReflection-&gt;getName()</code>
+    </ArgumentTypeCoercion>
+    <MissingImmutableAnnotation occurrences="1">
+      <code>#[ReturnTypeWillChange]</code>
+    </MissingImmutableAnnotation>
+    <MixedInferredReturnType occurrences="1">
+      <code>string|null</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="1">
+      <code>getName</code>
+    </MixedMethodCall>
+    <MixedReturnStatement occurrences="1">
+      <code>$type-&gt;getName()</code>
+    </MixedReturnStatement>
+    <PossiblyUndefinedVariable occurrences="1">
+      <code>$type</code>
+    </PossiblyUndefinedVariable>
+    <UndefinedMethod occurrences="2">
+      <code>getName</code>
+      <code>isBuiltin</code>
+    </UndefinedMethod>
+  </file>
+</files>

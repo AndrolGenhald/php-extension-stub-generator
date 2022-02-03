@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace PHPExtensionStubGenerator\LaminasCode;
 
+use Laminas\Code\Reflection\DocBlock\Tag\ParamTag;
 use Laminas\Code\Reflection\DocBlockReflection;
 use Laminas\Code\Reflection\MethodReflection;
 use Laminas\Code\Reflection\ParameterReflection as BaseParameterReflection;

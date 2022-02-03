@@ -21,7 +21,7 @@ class DumpCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->addArgument("extensionName", InputArgument::REQUIRED, "The extension to generate stubs for");
     }
@@ -34,6 +34,7 @@ class DumpCommand extends Command
         }
 
         $extensionName = $input->getArgument("extensionName");
+        assert(is_string($extensionName));
         if (!extension_loaded($extensionName)) {
             $errorOutput->writeln("<error>Extension $extensionName is not loaded</error>");
             return 1;
