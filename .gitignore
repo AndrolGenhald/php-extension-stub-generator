@@ -18,3 +18,5 @@ vendor/
 phpunit.xml
 clover.xml
 coveralls-upload.json
+
+php-extension-stub-generator.phar

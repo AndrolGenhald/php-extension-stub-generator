@@ -5,12 +5,13 @@
     "keywords": ["extension", "stub", "ReflectionExtension"],
     "require": {
         "laminas/laminas-code": "^4",
-        "symfony/console": "^6.0"
+        "symfony/console": "^4.0|^5.0|^6.0"
     },
     "require-dev": {
         "ext-phar": "*",
         "phpunit/phpunit": "^9.0",
-        "vimeo/psalm": "4.20"
+        "vimeo/psalm": "4.20",
+        "humbug/box": "^3.14"
     },
     "bin" : [
         "php-extension-stub-generator"
