@@ -52,14 +52,14 @@ class ParameterReflection extends BaseParameterReflection
         if (
             method_exists($this, 'getType')
             && null !== ($type = $this->getType())
-            && $type->isBuiltin()
+            // && $type->isBuiltin()
         ) {
-            return $type->getName();
+            return (string) $type;
         }
 
-        if (null !== $type && $type->getName() === 'self') {
-            return $this->getDeclaringClass()->getName();
-        }
+        // if (null !== $type && $type->getName() === 'self') {
+        //     return $this->getDeclaringClass()->getName();
+        // }
 
         if (($class = $this->getClass()) instanceof ReflectionClass) {
             return $class->getName();
