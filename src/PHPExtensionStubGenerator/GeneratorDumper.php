@@ -5,6 +5,7 @@ namespace PHPExtensionStubGenerator;
 
 use Generator;
 use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\DocBlock\Tag\VarTag;
 use Laminas\Code\Generator\DocBlockGenerator;
 use Laminas\Code\Reflection\ClassReflection;
 use ReflectionExtension;
@@ -92,7 +93,23 @@ class GeneratorDumper
     {
         /** @var \ReflectionClass $phpClassReflection */
         foreach ($this->reflectionExtension->getClasses() as $_fqcn => $phpClassReflection) {
-            $classGenerator = ClassGenerator::fromReflection(new ClassReflection($phpClassReflection->getName()));
+            $classReflection = new ClassReflection($phpClassReflection->getName());
+
+            // Get property types
+            $propertyTypes = [];
+            foreach ($classReflection->getProperties() as $property) {
+                $propertyTypes[$property->getName()] = $property->getType();
+            }
+
+            $classGenerator = ClassGenerator::fromReflection($classReflection);
+
+            // Set docblock @var tag for properties
+            foreach ($classGenerator->getProperties() as $property) {
+                $propertyType = $propertyTypes[$property->getName()] ?? null;
+                if ($propertyType !== null) {
+                    $property->setDocBlock(new DocBlockGenerator(null, null, [new VarTag(null, (string) $propertyType)]));
+                }
+            }
 
             yield $classGenerator->generate();
         }
