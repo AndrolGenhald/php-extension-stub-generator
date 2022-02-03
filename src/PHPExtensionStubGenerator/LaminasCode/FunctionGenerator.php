@@ -11,7 +11,7 @@ declare(strict_types=1);
  * https://github.com/zendframework/zend-code/blob/master/LICENSE.md
  */
 
-namespace PHPExtensionStubGenerator\ZendCode;
+namespace PHPExtensionStubGenerator\LaminasCode;
 
 class FunctionGenerator
 {

@@ -4,12 +4,11 @@ declare(strict_types=1);
 namespace PHPExtensionStubGenerator;
 
 use Generator;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Reflection\ClassReflection;
 use ReflectionExtension;
-use Zend\Code\Generator\ {
-    ClassGenerator, DocBlockGenerator
-};
-use Zend\Code\Reflection\ClassReflection;
-use PHPExtensionStubGenerator\ZendCode\ {
+use PHPExtensionStubGenerator\LaminasCode\ {
     FunctionGenerator, FunctionReflection
 };
 

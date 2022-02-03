@@ -11,25 +11,27 @@ declare(strict_types=1);
  * https://github.com/zendframework/zend-code/blob/master/LICENSE.md
  */
 
-namespace PHPExtensionStubGenerator\ZendCode;
+namespace PHPExtensionStubGenerator\LaminasCode;
 
-use Zend\Code\Reflection\FunctionReflection as BaseFunctionReflection;
+use Laminas\Code\Reflection\DocBlockReflection;
+use Laminas\Code\Reflection\FunctionReflection as BaseFunctionReflection;
+use Laminas\Code\Reflection\Exception;
 
 class FunctionReflection extends BaseFunctionReflection
 {
+    /**
+     * Get function DocBlock
+     *
+     * @throws Exception\InvalidArgumentException
+     * @return DocBlockReflection|false
+     */
     public function getDocBlock()
     {
-        if ('' == ($comment = $this->getDocComment())) {
-//            throw new Exception\InvalidArgumentException(sprintf(
-//                '%s does not have a DocBlock',
-//                $this->getName()
-//            ));
-            return '';
+        if ('' == $this->getDocComment()) {
+            return false;
         }
 
-        $instance = new DocBlockReflection($comment);
-
-        return $instance;
+        return new DocBlockReflection($this);
     }
 
     public function getParameters()
@@ -46,29 +48,26 @@ class FunctionReflection extends BaseFunctionReflection
         return $zendReflections;
     }
 
-    public function getPrototype($format = FunctionReflection::PROTOTYPE_AS_ARRAY)
+    /**
+     * Get method prototype
+     *
+     * @param string $format
+     * @return array|string
+     */
+    public function getPrototype($format = self::PROTOTYPE_AS_ARRAY)
     {
-        $returnType = 'mixed';
-        if ($this->hasReturnType()) {
-            $reflectReturn = $this->getReturnType();
-            if ($reflectReturn->allowsNull()) {
-                $returnType = sprintf("?%s", $reflectReturn->getName());
-            } else {
-                $returnType = $reflectReturn->getName();
-            }
-        }
-
-        $docBlock = $this->getDocBlock();
-        if ($returnType === 'mixed' && $docBlock) {
-            $return = $docBlock->getTag('return');
+        $docBlock    = $this->getDocBlock();
+        if ($docBlock !== false) {
+            $return      = $docBlock->getTag('return');
             $returnTypes = $return->getTypes();
-            $returnType = count($returnTypes) > 1 ? implode('|', $returnTypes) : $returnTypes[0];
+            $returnType  = count($returnTypes) > 1 ? implode('|', $returnTypes) : $returnTypes[0];
+        } else {
+            $returnType = 'mixed';
         }
 
         $prototype = [
             'namespace' => $this->getNamespaceName(),
-//            'name'      => substr($this->getName(), strlen($this->getNamespaceName()) + 1),
-            'name'      => substr($this->getName(), strlen($this->getNamespaceName()) + ($this->getNamespaceName() ? 1 : 0)),
+            'name'      => substr($this->getName(), strlen($this->getNamespaceName()) + 1),
             'return'    => $returnType,
             'arguments' => [],
         ];
@@ -77,20 +76,20 @@ class FunctionReflection extends BaseFunctionReflection
         foreach ($parameters as $parameter) {
             $prototype['arguments'][$parameter->getName()] = [
                 'type'     => $parameter->detectType(),
-                'required' => !$parameter->isOptional(),
+                'required' => ! $parameter->isOptional(),
                 'by_ref'   => $parameter->isPassedByReference(),
                 'default'  => $parameter->isDefaultValueAvailable() ? $parameter->getDefaultValue() : null,
             ];
         }
 
-        if ($format == FunctionReflection::PROTOTYPE_AS_STRING) {
+        if ($format == self::PROTOTYPE_AS_STRING) {
             $line = $prototype['return'] . ' ' . $prototype['name'] . '(';
             $args = [];
             foreach ($prototype['arguments'] as $name => $argument) {
                 $argsLine = ($argument['type']
-                        ? $argument['type'] . ' '
-                        : '') . ($argument['by_ref'] ? '&' : '') . '$' . $name;
-                if (!$argument['required']) {
+                    ? $argument['type'] . ' '
+                    : '') . ($argument['by_ref'] ? '&' : '') . '$' . $name;
+                if (! $argument['required']) {
                     $argsLine .= ' = ' . var_export($argument['default'], true);
                 }
                 $args[] = $argsLine;

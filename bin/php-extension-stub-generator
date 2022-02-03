@@ -1,63 +1,13 @@
 #!/usr/bin/env php
 <?php
-use Zend\Console\ {
-    ColorInterface as Color, Prompt\Confirm
-};
-use PHPExtensionStubGenerator\ {
-    Console\FilesDumper, GeneratorDumper
-};
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$doc = <<<DOC
-PHP Extension Stub Generator.
+use PHPExtensionStubGenerator\Console\DumpCommand;
+use Symfony\Component\Console\Application;
 
-Usage:
-  php-extension-stub-generator.phar dump <name>
-  php-extension-stub-generator.phar dump-files <name> <dir>
-  php-extension-stub-generator.phar (-h | --help)
-  php-extension-stub-generator.phar --version
+$application = new Application();
 
-Options:
-  -h --help     Show this screen.
-  --version     Show version.
+$application->add(new DumpCommand());
 
-DOC;
-
-try {
-    $console = \Zend\Console\Console::getInstance();
-    $docopt = Docopt::handle($doc, ['version'=>'PHP Extension Stub Generator 0.0.1']);
-
-    if (!extension_loaded($docopt->args['<name>'])) {
-        $console->writeLine("extension `{$docopt->args['<name>']}` is not loaded", Color::RED);
-        exit(1);
-    }
-
-    if ($docopt->args['dump']) {
-        $dumper = new GeneratorDumper(new ReflectionExtension($docopt->args['<name>']));
-
-        fwrite(STDOUT, "<?php\n");
-        foreach ($dumper->getGenerates() as $line) {
-            fwrite(STDOUT, $line . "\n");
-        }
-        exit(0);
-    }
-    if ($docopt->args['dump-files']) {
-        if ($docopt->args['<dir>'] && file_exists($docopt->args['<dir>'])) {
-            $prompt = new Confirm("Are you sure you want to make files at `{$docopt->args['<dir>']}` ?");
-            if ($result = $prompt->show()) {
-                /** @var FilesDumper $dumper */
-                $filesDumper = new FilesDumper(new ReflectionExtension($docopt->args['<name>']), $console);
-                $filesDumper->dumpFiles($docopt->args['<dir>']);
-            } else {
-                exit(0);
-            }
-        } else {
-            $console->writeLine("dir `{$docopt->args['<dir>']}` is not valid", Color::RED);
-            exit(1);
-        }
-    }
-} catch (\Exception $e) {
-    echo 'An Error has occured. ' , $e->getMessage() , PHP_EOL;
-    exit(1);
-}
+$application->run();

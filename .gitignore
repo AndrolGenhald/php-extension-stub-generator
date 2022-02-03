@@ -5,6 +5,7 @@
 .settings/
 .*.sw*
 .*.un~
+/.vscode
 
 doc/html/
 builds/
