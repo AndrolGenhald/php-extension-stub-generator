@@ -9,7 +9,7 @@ Code Completion under IDE.
 ## USAGE
 
 ```
-$ php-extension-stub-generator.phar dump-files {extension name} {dir} 
+$ php-extension-stub-generator.phar dump-files {extension name} {dir}
 ```
 
 ## USAGE Example

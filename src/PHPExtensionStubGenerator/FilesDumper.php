@@ -142,7 +142,7 @@ class FilesDumper
         return $functionFiles;
     }
 
-    private static function fqcnToFilename(string $fqcn) :string 
+    private static function fqcnToFilename(string $fqcn) :string
     {
         return sprintf(static::CLASS_FILENAME, str_replace('\\', '/', $fqcn));
     }
