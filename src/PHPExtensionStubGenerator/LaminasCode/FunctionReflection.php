@@ -84,7 +84,7 @@ class FunctionReflection extends BaseFunctionReflection
 
         $prototype = [
             'namespace' => $this->getNamespaceName(),
-            'name'      => substr($this->getName(), strlen($this->getNamespaceName()) + 1),
+            'name'      => substr($this->getName(), strlen($this->getNamespaceName()) + ($this->getNamespaceName() ? 1 : 0)),
             'return'    => $returnType,
             'arguments' => [],
         ];
