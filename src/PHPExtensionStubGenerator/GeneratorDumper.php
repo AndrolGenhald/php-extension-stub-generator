@@ -104,6 +104,7 @@ class GeneratorDumper
             } else {
                 $classGenerator = ClassGenerator::fromReflection($classReflection);
             }
+            $classGenerator->setFinal($classReflection->isFinal());
 
             // Set docblock @var tag for properties
             foreach ($classGenerator->getProperties() as $property) {
