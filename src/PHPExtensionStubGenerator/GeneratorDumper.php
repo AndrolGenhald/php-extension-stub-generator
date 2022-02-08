@@ -106,6 +106,21 @@ class GeneratorDumper
             }
             $classGenerator->setFinal($classReflection->isFinal());
 
+            // Set directly implemented interfaces excluding parent class interfaces and extended interfaces
+            $parentClass = $classReflection->getParentClass();
+            $ignoreInterfaces = [];
+            if ($parentClass !== false) {
+                foreach ($parentClass->getInterfaceNames() as $parentInterface) {
+                    $ignoreInterfaces[$parentInterface] = true;
+                }
+            }
+            $interfaces = [];
+            foreach ($classReflection->getInterfaces() as $interfaceReflection) {
+                self::addInterface($interfaces, $ignoreInterfaces, $interfaceReflection);
+            }
+            $directInterfaces = array_keys(array_diff_key($interfaces, $ignoreInterfaces));
+            $classGenerator->setImplementedInterfaces($directInterfaces);
+
             // Set docblock @var tag for properties
             foreach ($classGenerator->getProperties() as $property) {
                 $propertyType = $classReflection->getProperty($property->getName())->getType();
@@ -135,6 +150,19 @@ class GeneratorDumper
             }
 
             yield FunctionGenerator::generateByPrototypeArray($functionReflection->getPrototype());
+        }
+    }
+
+    /**
+     * @param array<class-string, true> $interfaces
+     * @param array<class-string, true> $ignoreInterfaces
+     */
+    private static function addInterface(array &$interfaces, array &$ignoreInterfaces, ClassReflection $newInterface): void
+    {
+        $interfaces[$newInterface->getName()] = true;
+        foreach ($newInterface->getInterfaces() as $extendedInterface) {
+            $ignoreInterfaces[$extendedInterface->getName()] = true;
+            self::addInterface($interfaces, $ignoreInterfaces, $extendedInterface);
         }
     }
 }
