@@ -1,0 +1,391 @@
+<?php
+// Generated with PHP version 7.4.0 geos version 0.0
+
+const GEOSBUF_CAP_ROUND = 1;
+const GEOSBUF_CAP_FLAT = 2;
+const GEOSBUF_CAP_SQUARE = 3;
+const GEOSBUF_JOIN_ROUND = 1;
+const GEOSBUF_JOIN_MITRE = 2;
+const GEOSBUF_JOIN_BEVEL = 3;
+const GEOS_POINT = 0;
+const GEOS_LINESTRING = 1;
+const GEOS_LINEARRING = 2;
+const GEOS_POLYGON = 3;
+const GEOS_MULTIPOINT = 4;
+const GEOS_MULTILINESTRING = 5;
+const GEOS_MULTIPOLYGON = 6;
+const GEOS_GEOMETRYCOLLECTION = 7;
+const GEOSVALID_ALLOW_SELFTOUCHING_RING_FORMING_HOLE = 1;
+const GEOSRELATE_BNR_MOD2 = 1;
+const GEOSRELATE_BNR_OGC = 1;
+const GEOSRELATE_BNR_ENDPOINT = 2;
+const GEOSRELATE_BNR_MULTIVALENT_ENDPOINT = 3;
+const GEOSRELATE_BNR_MONOVALENT_ENDPOINT = 4;
+function GEOSVersion() {}
+function GEOSPolygonize() {}
+function GEOSLineMerge() {}
+function GEOSSharedPaths() {}
+function GEOSRelateMatch() {}
+class GEOSWKTReader
+{
+    public function __construct()
+    {
+    }
+
+    public function read()
+    {
+    }
+}
+
+class GEOSWKTWriter
+{
+    public function __construct()
+    {
+    }
+
+    public function write()
+    {
+    }
+
+    public function setTrim()
+    {
+    }
+
+    public function setRoundingPrecision()
+    {
+    }
+
+    public function setOutputDimension()
+    {
+    }
+
+    public function getOutputDimension()
+    {
+    }
+
+    public function setOld3D()
+    {
+    }
+}
+
+class GEOSGeometry
+{
+    public function __construct()
+    {
+    }
+
+    public function __toString()
+    {
+    }
+
+    public function project()
+    {
+    }
+
+    public function interpolate()
+    {
+    }
+
+    public function buffer()
+    {
+    }
+
+    public function offsetCurve()
+    {
+    }
+
+    public function envelope()
+    {
+    }
+
+    public function intersection()
+    {
+    }
+
+    public function convexHull()
+    {
+    }
+
+    public function difference()
+    {
+    }
+
+    public function symDifference()
+    {
+    }
+
+    public function boundary()
+    {
+    }
+
+    public function union()
+    {
+    }
+
+    public function pointOnSurface()
+    {
+    }
+
+    public function centroid()
+    {
+    }
+
+    public function relate()
+    {
+    }
+
+    public function relateBoundaryNodeRule()
+    {
+    }
+
+    public function simplify()
+    {
+    }
+
+    public function normalize()
+    {
+    }
+
+    public function setPrecision()
+    {
+    }
+
+    public function getPrecision()
+    {
+    }
+
+    public function extractUniquePoints()
+    {
+    }
+
+    public function disjoint()
+    {
+    }
+
+    public function touches()
+    {
+    }
+
+    public function intersects()
+    {
+    }
+
+    public function crosses()
+    {
+    }
+
+    public function within()
+    {
+    }
+
+    public function contains()
+    {
+    }
+
+    public function overlaps()
+    {
+    }
+
+    public function covers()
+    {
+    }
+
+    public function coveredBy()
+    {
+    }
+
+    public function equals()
+    {
+    }
+
+    public function equalsExact()
+    {
+    }
+
+    public function isEmpty()
+    {
+    }
+
+    public function checkValidity()
+    {
+    }
+
+    public function isSimple()
+    {
+    }
+
+    public function isRing()
+    {
+    }
+
+    public function hasZ()
+    {
+    }
+
+    public function isClosed()
+    {
+    }
+
+    public function typeName()
+    {
+    }
+
+    public function typeId()
+    {
+    }
+
+    public function getSRID()
+    {
+    }
+
+    public function setSRID()
+    {
+    }
+
+    public function numGeometries()
+    {
+    }
+
+    public function geometryN()
+    {
+    }
+
+    public function numInteriorRings()
+    {
+    }
+
+    public function numPoints()
+    {
+    }
+
+    public function getX()
+    {
+    }
+
+    public function getY()
+    {
+    }
+
+    public function interiorRingN()
+    {
+    }
+
+    public function exteriorRing()
+    {
+    }
+
+    public function numCoordinates()
+    {
+    }
+
+    public function dimension()
+    {
+    }
+
+    public function coordinateDimension()
+    {
+    }
+
+    public function pointN()
+    {
+    }
+
+    public function startPoint()
+    {
+    }
+
+    public function endPoint()
+    {
+    }
+
+    public function area()
+    {
+    }
+
+    public function length()
+    {
+    }
+
+    public function distance()
+    {
+    }
+
+    public function hausdorffDistance()
+    {
+    }
+
+    public function snapTo()
+    {
+    }
+
+    public function node()
+    {
+    }
+
+    public function delaunayTriangulation()
+    {
+    }
+
+    public function voronoiDiagram()
+    {
+    }
+
+    public function clipByRect()
+    {
+    }
+}
+
+class GEOSWKBWriter
+{
+    public function __construct()
+    {
+    }
+
+    public function getOutputDimension()
+    {
+    }
+
+    public function setOutputDimension()
+    {
+    }
+
+    public function getByteOrder()
+    {
+    }
+
+    public function setByteOrder()
+    {
+    }
+
+    public function getIncludeSRID()
+    {
+    }
+
+    public function setIncludeSRID()
+    {
+    }
+
+    public function write()
+    {
+    }
+
+    public function writeHEX()
+    {
+    }
+}
+
+class GEOSWKBReader
+{
+    public function __construct()
+    {
+    }
+
+    public function read()
+    {
+    }
+
+    public function readHEX()
+    {
+    }
+}
+

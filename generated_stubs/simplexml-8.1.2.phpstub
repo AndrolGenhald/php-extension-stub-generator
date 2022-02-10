@@ -1,0 +1,97 @@
+<?php
+// Generated with PHP version 8.1.2 SimpleXML version 8.1.2
+
+function simplexml_load_file(string $filename, ?string $class_name = 'SimpleXMLElement', int $options = 0, string $namespace_or_prefix = '', bool $is_prefix = false) {}
+function simplexml_load_string(string $data, ?string $class_name = 'SimpleXMLElement', int $options = 0, string $namespace_or_prefix = '', bool $is_prefix = false) {}
+function simplexml_import_dom(SimpleXMLElement|DOMNode $node, ?string $class_name = 'SimpleXMLElement') {}
+class SimpleXMLElement implements Stringable, Countable, RecursiveIterator, Traversable, Iterator
+{
+    public function xpath(string $expression)
+    {
+    }
+
+    public function registerXPathNamespace(string $prefix, string $namespace)
+    {
+    }
+
+    public function asXML(?string $filename = null)
+    {
+    }
+
+    public function saveXML(?string $filename = null)
+    {
+    }
+
+    public function getNamespaces(bool $recursive = false)
+    {
+    }
+
+    public function getDocNamespaces(bool $recursive = false, bool $fromRoot = true)
+    {
+    }
+
+    public function children(?string $namespaceOrPrefix = null, bool $isPrefix = false)
+    {
+    }
+
+    public function attributes(?string $namespaceOrPrefix = null, bool $isPrefix = false)
+    {
+    }
+
+    public function __construct(string $data, int $options = 0, bool $dataIsURL = false, string $namespaceOrPrefix = '', bool $isPrefix = false)
+    {
+    }
+
+    public function addChild(string $qualifiedName, ?string $value = null, ?string $namespace = null)
+    {
+    }
+
+    public function addAttribute(string $qualifiedName, string $value, ?string $namespace = null)
+    {
+    }
+
+    public function getName()
+    {
+    }
+
+    public function __toString() : string
+    {
+    }
+
+    public function count()
+    {
+    }
+
+    public function rewind()
+    {
+    }
+
+    public function valid()
+    {
+    }
+
+    public function current()
+    {
+    }
+
+    public function key()
+    {
+    }
+
+    public function next()
+    {
+    }
+
+    public function hasChildren()
+    {
+    }
+
+    public function getChildren()
+    {
+    }
+}
+
+class SimpleXMLIterator extends SimpleXMLElement
+{
+}
+

@@ -1,0 +1,206 @@
+<?php
+// Generated with PHP version 8.1.2 decimal version 1.4.0
+
+namespace Decimal;
+
+class Decimal implements \Stringable, \JsonSerializable
+{
+    public const ROUND_UP = 101;
+
+    public const ROUND_DOWN = 102;
+
+    public const ROUND_CEILING = 103;
+
+    public const ROUND_FLOOR = 104;
+
+    public const ROUND_HALF_UP = 105;
+
+    public const ROUND_HALF_DOWN = 106;
+
+    public const ROUND_HALF_EVEN = 107;
+
+    public const ROUND_HALF_ODD = 108;
+
+    public const ROUND_TRUNCATE = 109;
+
+    public const DEFAULT_PRECISION = 28;
+
+    public const DEFAULT_ROUNDING = 107;
+
+    public const MIN_PRECISION = 1;
+
+    public const MAX_PRECISION = 999999999999999999;
+
+    public function __construct($value = null, int $precision = null)
+    {
+    }
+
+    public function copy() : \Decimal\Decimal
+    {
+    }
+
+    public function add($value) : \Decimal\Decimal
+    {
+    }
+
+    public function sub($value) : \Decimal\Decimal
+    {
+    }
+
+    public function mul($value) : \Decimal\Decimal
+    {
+    }
+
+    public function div($value) : \Decimal\Decimal
+    {
+    }
+
+    public function rem($value) : \Decimal\Decimal
+    {
+    }
+
+    public function mod($value) : \Decimal\Decimal
+    {
+    }
+
+    public function pow($value) : \Decimal\Decimal
+    {
+    }
+
+    public function ln() : \Decimal\Decimal
+    {
+    }
+
+    public function exp() : \Decimal\Decimal
+    {
+    }
+
+    public function log10() : \Decimal\Decimal
+    {
+    }
+
+    public function sqrt() : \Decimal\Decimal
+    {
+    }
+
+    public function floor() : \Decimal\Decimal
+    {
+    }
+
+    public function ceil() : \Decimal\Decimal
+    {
+    }
+
+    public function truncate() : \Decimal\Decimal
+    {
+    }
+
+    public function round(?int $places = null, ?int $rounding = null) : \Decimal\Decimal
+    {
+    }
+
+    public function shift(int $places) : \Decimal\Decimal
+    {
+    }
+
+    public function trim() : \Decimal\Decimal
+    {
+    }
+
+    public function precision() : int
+    {
+    }
+
+    public function signum() : int
+    {
+    }
+
+    public function parity() : int
+    {
+    }
+
+    public function abs() : \Decimal\Decimal
+    {
+    }
+
+    public function negate() : \Decimal\Decimal
+    {
+    }
+
+    public function isEven() : bool
+    {
+    }
+
+    public function isOdd() : bool
+    {
+    }
+
+    public function isPositive() : bool
+    {
+    }
+
+    public function isNegative() : bool
+    {
+    }
+
+    public function isNaN() : bool
+    {
+    }
+
+    public function isInf() : bool
+    {
+    }
+
+    public function isInteger() : bool
+    {
+    }
+
+    public function isZero() : bool
+    {
+    }
+
+    public function toFixed(?int $places = null, ?bool $commas = null, ?int $rounding = null) : string
+    {
+    }
+
+    public function toString() : string
+    {
+    }
+
+    public function toInt() : int
+    {
+    }
+
+    public function toFloat() : float
+    {
+    }
+
+    public function equals($other) : bool
+    {
+    }
+
+    public function compareTo($other) : int
+    {
+    }
+
+    public function between($op1, $op2 = null) : bool
+    {
+    }
+
+    public static function sum($values, ?int $precision = null) : \Decimal\Decimal
+    {
+    }
+
+    public static function avg($values, ?int $precision = null) : \Decimal\Decimal
+    {
+    }
+
+    public function __toString() : string
+    {
+    }
+
+    public function jsonSerialize() : string
+    {
+    }
+}
+

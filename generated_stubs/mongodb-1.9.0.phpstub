@@ -1,0 +1,1420 @@
+<?php
+// Generated with PHP version 8.0.0 mongodb version 1.9.0
+
+const MONGODB_VERSION = "1.9.0";
+const MONGODB_STABILITY = "stable";
+namespace MongoDB\BSON;
+function fromPHP($value) {}
+function toPHP($bson, array $typemap = NULL) {}
+function toJSON($bson) {}
+function toCanonicalExtendedJSON($bson) {}
+function toRelaxedExtendedJSON($bson) {}
+function fromJSON($json) {}
+namespace MongoDB\Driver\Monitoring;
+function addSubscriber(MongoDB\Driver\Monitoring\Subscriber $subscriber) {}
+function removeSubscriber(MongoDB\Driver\Monitoring\Subscriber $subscriber) {}
+namespace MongoDB\BSON;
+
+interface Type
+{
+}
+
+namespace MongoDB\BSON;
+
+interface Serializable extends Type
+{
+    public function bsonSerialize();
+}
+
+namespace MongoDB\BSON;
+
+interface Unserializable
+{
+    public function bsonUnserialize(array $data);
+}
+
+namespace MongoDB\BSON;
+
+interface BinaryInterface
+{
+    public function getData();
+    public function getType();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface Decimal128Interface
+{
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface JavascriptInterface
+{
+    public function getCode();
+    public function getScope();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface MaxKeyInterface
+{
+}
+
+namespace MongoDB\BSON;
+
+interface MinKeyInterface
+{
+}
+
+namespace MongoDB\BSON;
+
+interface ObjectIdInterface
+{
+    public function getTimestamp();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface RegexInterface
+{
+    public function getFlags();
+    public function getPattern();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface TimestampInterface
+{
+    public function getIncrement();
+    public function getTimestamp();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+interface UTCDateTimeInterface
+{
+    public function toDateTime();
+    public function __toString();
+}
+
+namespace MongoDB\BSON;
+
+final class Binary implements BinaryInterface, \JsonSerializable, Type, \Serializable
+{
+    public const TYPE_GENERIC = 0;
+
+    public const TYPE_FUNCTION = 1;
+
+    public const TYPE_OLD_BINARY = 2;
+
+    public const TYPE_OLD_UUID = 3;
+
+    public const TYPE_UUID = 4;
+
+    public const TYPE_MD5 = 5;
+
+    public const TYPE_ENCRYPTED = 6;
+
+    public const TYPE_USER_DEFINED = 128;
+
+    final public function __construct($data, $type)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final public function getData()
+    {
+    }
+
+    final public function getType()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class DBPointer implements \JsonSerializable, Type, \Serializable
+{
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Decimal128 implements Decimal128Interface, \JsonSerializable, Type, \Serializable
+{
+    final public function __construct($value)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Int64 implements \JsonSerializable, Type, \Serializable
+{
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Javascript implements JavascriptInterface, \JsonSerializable, Type, \Serializable
+{
+    final public function __construct($javascript, $scope = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final public function getCode()
+    {
+    }
+
+    final public function getScope()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class MaxKey implements MaxKeyInterface, \JsonSerializable, Type, \Serializable
+{
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class MinKey implements MinKeyInterface, \JsonSerializable, Type, \Serializable
+{
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class ObjectId implements ObjectIdInterface, \JsonSerializable, Type, \Serializable
+{
+    final public function __construct($id = null)
+    {
+    }
+
+    final public function getTimestamp()
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+interface Persistable extends Unserializable, Serializable
+{
+}
+
+namespace MongoDB\BSON;
+
+final class Regex implements RegexInterface, Type, \Serializable, \JsonSerializable
+{
+    final public function __construct($pattern, $flags = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final public function getPattern()
+    {
+    }
+
+    final public function getFlags()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Symbol implements \JsonSerializable, Type, \Serializable
+{
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Timestamp implements TimestampInterface, \JsonSerializable, Type, \Serializable
+{
+    final public function __construct($increment, $timestamp)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final public function getIncrement()
+    {
+    }
+
+    final public function getTimestamp()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class Undefined implements \JsonSerializable, Type, \Serializable
+{
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+}
+
+namespace MongoDB\BSON;
+
+final class UTCDateTime implements UTCDateTimeInterface, \JsonSerializable, Type, \Serializable
+{
+    final public function __construct($milliseconds = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function __toString()
+    {
+    }
+
+    final public function jsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final public function toDateTime()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+interface CursorInterface extends \Traversable
+{
+    public function getId();
+    public function getServer();
+    public function isDead();
+    public function setTypeMap(array $typemap);
+    public function toArray();
+}
+
+namespace MongoDB\Driver;
+
+final class BulkWrite implements \Countable
+{
+    final public function __construct(?array $options = null)
+    {
+    }
+
+    final public function insert($document)
+    {
+    }
+
+    final public function update($query, $newObj, ?array $updateOptions = null)
+    {
+    }
+
+    final public function delete($query, ?array $deleteOptions = null)
+    {
+    }
+
+    final public function count()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class ClientEncryption
+{
+    public const AEAD_AES_256_CBC_HMAC_SHA_512_DETERMINISTIC = 'AEAD_AES_256_CBC_HMAC_SHA_512-Deterministic';
+
+    public const AEAD_AES_256_CBC_HMAC_SHA_512_RANDOM = 'AEAD_AES_256_CBC_HMAC_SHA_512-Random';
+
+    final public function createDataKey($kmsProvider, ?array $options = null)
+    {
+    }
+
+    final public function encrypt($value, ?array $options = null)
+    {
+    }
+
+    final public function decrypt(\MongoDB\BSON\BinaryInterface $keyVaultClient)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Command
+{
+    final public function __construct($document, ?array $options = null)
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Cursor implements \Iterator, CursorInterface
+{
+    final public function setTypeMap(array $typemap)
+    {
+    }
+
+    final public function toArray()
+    {
+    }
+
+    final public function getId()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function isDead()
+    {
+    }
+
+    public function current()
+    {
+    }
+
+    public function key()
+    {
+    }
+
+    public function next()
+    {
+    }
+
+    public function valid()
+    {
+    }
+
+    public function rewind()
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class CursorId implements \Serializable
+{
+    final public function __toString()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Manager
+{
+    final public function __construct($uri = null, array $options = null, array $driverOptions = null)
+    {
+    }
+
+    final public function createClientEncryption(array $options)
+    {
+    }
+
+    final public function executeCommand($db, \MongoDB\Driver\Command $command, $options = null)
+    {
+    }
+
+    final public function executeReadCommand($db, \MongoDB\Driver\Command $command, array $options = null)
+    {
+    }
+
+    final public function executeWriteCommand($db, \MongoDB\Driver\Command $command, array $options = null)
+    {
+    }
+
+    final public function executeReadWriteCommand($db, \MongoDB\Driver\Command $command, $options = null)
+    {
+    }
+
+    final public function executeQuery($namespace, \MongoDB\Driver\Query $zquery, $options = null)
+    {
+    }
+
+    final public function executeBulkWrite($namespace, \MongoDB\Driver\BulkWrite $zbulk, $options = null)
+    {
+    }
+
+    final public function getReadConcern()
+    {
+    }
+
+    final public function getReadPreference()
+    {
+    }
+
+    final public function getServers()
+    {
+    }
+
+    final public function getWriteConcern()
+    {
+    }
+
+    final public function selectServer(?\MongoDB\Driver\ReadPreference $readPreference)
+    {
+    }
+
+    final public function startSession(?array $options = null)
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Query
+{
+    final public function __construct($filter, ?array $options = null)
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class ReadConcern implements \MongoDB\BSON\Serializable, \Serializable
+{
+    public const LOCAL = 'local';
+
+    public const MAJORITY = 'majority';
+
+    public const LINEARIZABLE = 'linearizable';
+
+    public const AVAILABLE = 'available';
+
+    final public function __construct($level = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function getLevel()
+    {
+    }
+
+    final public function isDefault()
+    {
+    }
+
+    final public function bsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class ReadPreference implements \MongoDB\BSON\Serializable, \Serializable
+{
+    public const RP_PRIMARY = 1;
+
+    public const RP_PRIMARY_PREFERRED = 5;
+
+    public const RP_SECONDARY = 2;
+
+    public const RP_SECONDARY_PREFERRED = 6;
+
+    public const RP_NEAREST = 10;
+
+    public const NO_MAX_STALENESS = -1;
+
+    public const SMALLEST_MAX_STALENESS_SECONDS = 90;
+
+    public const PRIMARY = 'primary';
+
+    public const PRIMARY_PREFERRED = 'primaryPreferred';
+
+    public const SECONDARY = 'secondary';
+
+    public const SECONDARY_PREFERRED = 'secondaryPreferred';
+
+    public const NEAREST = 'nearest';
+
+    final public function __construct($mode, ?array $tagSets = null, ?array $options = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function getHedge()
+    {
+    }
+
+    final public function getMaxStalenessSeconds()
+    {
+    }
+
+    final public function getMode()
+    {
+    }
+
+    final public function getModeString()
+    {
+    }
+
+    final public function getTagSets()
+    {
+    }
+
+    final public function bsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Server
+{
+    public const TYPE_UNKNOWN = 0;
+
+    public const TYPE_STANDALONE = 1;
+
+    public const TYPE_MONGOS = 2;
+
+    public const TYPE_POSSIBLE_PRIMARY = 3;
+
+    public const TYPE_RS_PRIMARY = 4;
+
+    public const TYPE_RS_SECONDARY = 5;
+
+    public const TYPE_RS_ARBITER = 6;
+
+    public const TYPE_RS_OTHER = 7;
+
+    public const TYPE_RS_GHOST = 8;
+
+    final public function executeCommand($db, \MongoDB\Driver\Command $command, $options = null)
+    {
+    }
+
+    final public function executeReadCommand($db, \MongoDB\Driver\Command $command, array $options = null)
+    {
+    }
+
+    final public function executeWriteCommand($db, \MongoDB\Driver\Command $command, array $options = null)
+    {
+    }
+
+    final public function executeReadWriteCommand($db, \MongoDB\Driver\Command $command, array $options = null)
+    {
+    }
+
+    final public function executeQuery($namespace, \MongoDB\Driver\Query $zquery, $options = null)
+    {
+    }
+
+    final public function executeBulkWrite($namespace, \MongoDB\Driver\BulkWrite $zbulk, $options = null)
+    {
+    }
+
+    final public function getHost()
+    {
+    }
+
+    final public function getTags()
+    {
+    }
+
+    final public function getInfo()
+    {
+    }
+
+    final public function getLatency()
+    {
+    }
+
+    final public function getPort()
+    {
+    }
+
+    final public function getType()
+    {
+    }
+
+    final public function isPrimary()
+    {
+    }
+
+    final public function isSecondary()
+    {
+    }
+
+    final public function isArbiter()
+    {
+    }
+
+    final public function isHidden()
+    {
+    }
+
+    final public function isPassive()
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class Session
+{
+    public const TRANSACTION_NONE = 'none';
+
+    public const TRANSACTION_STARTING = 'starting';
+
+    public const TRANSACTION_IN_PROGRESS = 'in_progress';
+
+    public const TRANSACTION_COMMITTED = 'committed';
+
+    public const TRANSACTION_ABORTED = 'aborted';
+
+    final public function abortTransaction()
+    {
+    }
+
+    final public function advanceClusterTime($clusterTime)
+    {
+    }
+
+    final public function advanceOperationTime($timestamp)
+    {
+    }
+
+    final public function commitTransaction()
+    {
+    }
+
+    final public function endSession()
+    {
+    }
+
+    final public function getClusterTime()
+    {
+    }
+
+    final public function getLogicalSessionId()
+    {
+    }
+
+    final public function getOperationTime()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function getTransactionOptions()
+    {
+    }
+
+    final public function getTransactionState()
+    {
+    }
+
+    final public function isInTransaction()
+    {
+    }
+
+    final public function startTransaction(?array $options = null)
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class WriteConcern implements \MongoDB\BSON\Serializable, \Serializable
+{
+    public const MAJORITY = 'majority';
+
+    final public function __construct($w, $wtimeout = null, $journal = null)
+    {
+    }
+
+    public static function __set_state(array $properties)
+    {
+    }
+
+    final public function getW()
+    {
+    }
+
+    final public function getWtimeout()
+    {
+    }
+
+    final public function getJournal()
+    {
+    }
+
+    final public function isDefault()
+    {
+    }
+
+    final public function bsonSerialize()
+    {
+    }
+
+    final public function serialize()
+    {
+    }
+
+    final public function unserialize($serialized)
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class WriteConcernError
+{
+    final public function getCode()
+    {
+    }
+
+    final public function getInfo()
+    {
+    }
+
+    final public function getMessage()
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class WriteError
+{
+    final public function getCode()
+    {
+    }
+
+    final public function getIndex()
+    {
+    }
+
+    final public function getMessage()
+    {
+    }
+
+    final public function getInfo()
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver;
+
+final class WriteResult
+{
+    final public function getInsertedCount()
+    {
+    }
+
+    final public function getMatchedCount()
+    {
+    }
+
+    final public function getModifiedCount()
+    {
+    }
+
+    final public function getDeletedCount()
+    {
+    }
+
+    final public function getUpsertedCount()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function getUpsertedIds()
+    {
+    }
+
+    final public function getWriteConcernError()
+    {
+    }
+
+    final public function getWriteErrors()
+    {
+    }
+
+    final public function isAcknowledged()
+    {
+    }
+
+    final private function __construct()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver\Exception;
+
+interface Exception extends \Throwable
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class RuntimeException extends \RuntimeException implements Exception
+{
+    protected $errorLabels;
+
+    final public function hasErrorLabel($label)
+    {
+    }
+}
+
+namespace MongoDB\Driver\Exception;
+
+class ServerException extends RuntimeException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class ConnectionException extends RuntimeException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+abstract class WriteException extends ServerException
+{
+    protected $writeResult;
+
+    final public function getWriteResult()
+    {
+    }
+}
+
+namespace MongoDB\Driver\Exception;
+
+class AuthenticationException extends ConnectionException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class BulkWriteException extends WriteException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class CommandException extends ServerException
+{
+    protected $resultDocument;
+
+    final public function getResultDocument()
+    {
+    }
+}
+
+namespace MongoDB\Driver\Exception;
+
+final class ConnectionTimeoutException extends ConnectionException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class EncryptionException extends RuntimeException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+final class ExecutionTimeoutException extends ServerException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class InvalidArgumentException extends \InvalidArgumentException implements Exception
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class LogicException extends \LogicException implements Exception
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+final class SSLConnectionException extends ConnectionException
+{
+}
+
+namespace MongoDB\Driver\Exception;
+
+class UnexpectedValueException extends \UnexpectedValueException implements Exception
+{
+}
+
+namespace MongoDB\Driver\Monitoring;
+
+interface Subscriber
+{
+}
+
+namespace MongoDB\Driver\Monitoring;
+
+interface CommandSubscriber extends Subscriber
+{
+    public function commandStarted(\MongoDB\Driver\Monitoring\CommandStartedEvent $event);
+    public function commandSucceeded(\MongoDB\Driver\Monitoring\CommandSucceededEvent $event);
+    public function commandFailed(\MongoDB\Driver\Monitoring\CommandFailedEvent $event);
+}
+
+namespace MongoDB\Driver\Monitoring;
+
+final class CommandFailedEvent
+{
+    final private function __construct()
+    {
+    }
+
+    final public function getCommandName()
+    {
+    }
+
+    final public function getError()
+    {
+    }
+
+    final public function getDurationMicros()
+    {
+    }
+
+    final public function getOperationId()
+    {
+    }
+
+    final public function getReply()
+    {
+    }
+
+    final public function getRequestId()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver\Monitoring;
+
+final class CommandStartedEvent
+{
+    final private function __construct()
+    {
+    }
+
+    final public function getCommand()
+    {
+    }
+
+    final public function getCommandName()
+    {
+    }
+
+    final public function getDatabaseName()
+    {
+    }
+
+    final public function getOperationId()
+    {
+    }
+
+    final public function getRequestId()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+
+namespace MongoDB\Driver\Monitoring;
+
+final class CommandSucceededEvent
+{
+    final private function __construct()
+    {
+    }
+
+    final public function getCommandName()
+    {
+    }
+
+    final public function getDurationMicros()
+    {
+    }
+
+    final public function getOperationId()
+    {
+    }
+
+    final public function getReply()
+    {
+    }
+
+    final public function getRequestId()
+    {
+    }
+
+    final public function getServer()
+    {
+    }
+
+    final public function __wakeup()
+    {
+    }
+}
+

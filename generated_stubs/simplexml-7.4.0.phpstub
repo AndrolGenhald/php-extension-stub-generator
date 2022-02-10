@@ -1,0 +1,96 @@
+<?php
+// Generated with PHP version 7.4.0 SimpleXML version 7.4.0
+
+function simplexml_load_file($filename, $class_name = NULL, $options = NULL, $ns = NULL, $is_prefix = NULL) {}
+function simplexml_load_string($data, $class_name = NULL, $options = NULL, $ns = NULL, $is_prefix = NULL) {}
+function simplexml_import_dom($node, $class_name = NULL) {}
+class SimpleXMLElement implements Traversable, Countable
+{
+    final public function __construct($data, $options = null, $data_is_url = null, $ns = null, $is_prefix = null)
+    {
+    }
+
+    public function asXML($filename = null)
+    {
+    }
+
+    public function saveXML($filename = null)
+    {
+    }
+
+    public function xpath($path)
+    {
+    }
+
+    public function registerXPathNamespace($prefix, $ns)
+    {
+    }
+
+    public function attributes($ns = null, $is_prefix = null)
+    {
+    }
+
+    public function children($ns = null, $is_prefix = null)
+    {
+    }
+
+    public function getNamespaces($recursve = null)
+    {
+    }
+
+    public function getDocNamespaces($recursve = null, $from_root = null)
+    {
+    }
+
+    public function getName()
+    {
+    }
+
+    public function addChild($name, $value = null, $ns = null)
+    {
+    }
+
+    public function addAttribute($name, $value = null, $ns = null)
+    {
+    }
+
+    public function __toString()
+    {
+    }
+
+    public function count()
+    {
+    }
+}
+
+class SimpleXMLIterator extends SimpleXMLElement implements RecursiveIterator, Iterator
+{
+    public function rewind()
+    {
+    }
+
+    public function valid()
+    {
+    }
+
+    public function current()
+    {
+    }
+
+    public function key()
+    {
+    }
+
+    public function next()
+    {
+    }
+
+    public function hasChildren()
+    {
+    }
+
+    public function getChildren()
+    {
+    }
+}
+

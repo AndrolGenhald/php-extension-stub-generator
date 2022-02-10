@@ -1,0 +1,593 @@
+<?php
+// Generated with PHP version 8.0.15 dom version 20031129
+
+const XML_ELEMENT_NODE = 1;
+const XML_ATTRIBUTE_NODE = 2;
+const XML_TEXT_NODE = 3;
+const XML_CDATA_SECTION_NODE = 4;
+const XML_ENTITY_REF_NODE = 5;
+const XML_ENTITY_NODE = 6;
+const XML_PI_NODE = 7;
+const XML_COMMENT_NODE = 8;
+const XML_DOCUMENT_NODE = 9;
+const XML_DOCUMENT_TYPE_NODE = 10;
+const XML_DOCUMENT_FRAG_NODE = 11;
+const XML_NOTATION_NODE = 12;
+const XML_HTML_DOCUMENT_NODE = 13;
+const XML_DTD_NODE = 14;
+const XML_ELEMENT_DECL_NODE = 15;
+const XML_ATTRIBUTE_DECL_NODE = 16;
+const XML_ENTITY_DECL_NODE = 17;
+const XML_NAMESPACE_DECL_NODE = 18;
+const XML_LOCAL_NAMESPACE = 18;
+const XML_ATTRIBUTE_CDATA = 1;
+const XML_ATTRIBUTE_ID = 2;
+const XML_ATTRIBUTE_IDREF = 3;
+const XML_ATTRIBUTE_IDREFS = 4;
+const XML_ATTRIBUTE_ENTITY = 6;
+const XML_ATTRIBUTE_NMTOKEN = 7;
+const XML_ATTRIBUTE_NMTOKENS = 8;
+const XML_ATTRIBUTE_ENUMERATION = 9;
+const XML_ATTRIBUTE_NOTATION = 10;
+const DOM_PHP_ERR = 0;
+const DOM_INDEX_SIZE_ERR = 1;
+const DOMSTRING_SIZE_ERR = 2;
+const DOM_HIERARCHY_REQUEST_ERR = 3;
+const DOM_WRONG_DOCUMENT_ERR = 4;
+const DOM_INVALID_CHARACTER_ERR = 5;
+const DOM_NO_DATA_ALLOWED_ERR = 6;
+const DOM_NO_MODIFICATION_ALLOWED_ERR = 7;
+const DOM_NOT_FOUND_ERR = 8;
+const DOM_NOT_SUPPORTED_ERR = 9;
+const DOM_INUSE_ATTRIBUTE_ERR = 10;
+const DOM_INVALID_STATE_ERR = 11;
+const DOM_SYNTAX_ERR = 12;
+const DOM_INVALID_MODIFICATION_ERR = 13;
+const DOM_NAMESPACE_ERR = 14;
+const DOM_INVALID_ACCESS_ERR = 15;
+const DOM_VALIDATION_ERR = 16;
+function dom_import_simplexml(object $node) {}
+class DOMException extends Exception
+{
+    public $code = 0;
+}
+
+interface DOMParentNode
+{
+    public function append(... $nodes) : void;
+    public function prepend(... $nodes) : void;
+}
+
+interface DOMChildNode
+{
+    public function remove() : void;
+    public function before(... $nodes) : void;
+    public function after(... $nodes) : void;
+    public function replaceWith(... $nodes) : void;
+}
+
+class DOMImplementation
+{
+    public function getFeature(string $feature, string $version)
+    {
+    }
+
+    public function hasFeature(string $feature, string $version)
+    {
+    }
+
+    public function createDocumentType(string $qualifiedName, string $publicId = '', string $systemId = '')
+    {
+    }
+
+    public function createDocument(?string $namespace = null, string $qualifiedName = '', ?\DOMDocumentType $doctype = null)
+    {
+    }
+}
+
+class DOMNode
+{
+    public function appendChild(\DOMNode $node)
+    {
+    }
+
+    public function C14N(bool $exclusive = false, bool $withComments = false, ?array $xpath = null, ?array $nsPrefixes = null)
+    {
+    }
+
+    public function C14NFile(string $uri, bool $exclusive = false, bool $withComments = false, ?array $xpath = null, ?array $nsPrefixes = null)
+    {
+    }
+
+    public function cloneNode(bool $deep = false)
+    {
+    }
+
+    public function getLineNo()
+    {
+    }
+
+    public function getNodePath()
+    {
+    }
+
+    public function hasAttributes()
+    {
+    }
+
+    public function hasChildNodes()
+    {
+    }
+
+    public function insertBefore(\DOMNode $node, ?\DOMNode $child = null)
+    {
+    }
+
+    public function isDefaultNamespace(string $namespace)
+    {
+    }
+
+    public function isSameNode(\DOMNode $otherNode)
+    {
+    }
+
+    public function isSupported(string $feature, string $version)
+    {
+    }
+
+    public function lookupNamespaceURI(?string $prefix)
+    {
+    }
+
+    public function lookupPrefix(string $namespace)
+    {
+    }
+
+    public function normalize()
+    {
+    }
+
+    public function removeChild(\DOMNode $child)
+    {
+    }
+
+    public function replaceChild(\DOMNode $node, \DOMNode $child)
+    {
+    }
+}
+
+class DOMNameSpaceNode
+{
+}
+
+class DOMDocumentFragment extends DOMNode implements DOMParentNode
+{
+    public function __construct()
+    {
+    }
+
+    public function appendXML(string $data)
+    {
+    }
+
+    public function append(... $nodes) : void
+    {
+    }
+
+    public function prepend(... $nodes) : void
+    {
+    }
+}
+
+class DOMDocument extends DOMNode implements DOMParentNode
+{
+    public function __construct(string $version = '1.0', string $encoding = '')
+    {
+    }
+
+    public function createAttribute(string $localName)
+    {
+    }
+
+    public function createAttributeNS(?string $namespace, string $qualifiedName)
+    {
+    }
+
+    public function createCDATASection(string $data)
+    {
+    }
+
+    public function createComment(string $data)
+    {
+    }
+
+    public function createDocumentFragment()
+    {
+    }
+
+    public function createElement(string $localName, string $value = '')
+    {
+    }
+
+    public function createElementNS(?string $namespace, string $qualifiedName, string $value = '')
+    {
+    }
+
+    public function createEntityReference(string $name)
+    {
+    }
+
+    public function createProcessingInstruction(string $target, string $data = '')
+    {
+    }
+
+    public function createTextNode(string $data)
+    {
+    }
+
+    public function getElementById(string $elementId)
+    {
+    }
+
+    public function getElementsByTagName(string $qualifiedName)
+    {
+    }
+
+    public function getElementsByTagNameNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function importNode(\DOMNode $node, bool $deep = false)
+    {
+    }
+
+    public function load(string $filename, int $options = 0)
+    {
+    }
+
+    public function loadXML(string $source, int $options = 0)
+    {
+    }
+
+    public function normalizeDocument()
+    {
+    }
+
+    public function registerNodeClass(string $baseClass, ?string $extendedClass)
+    {
+    }
+
+    public function save(string $filename, int $options = 0)
+    {
+    }
+
+    public function loadHTML(string $source, int $options = 0)
+    {
+    }
+
+    public function loadHTMLFile(string $filename, int $options = 0)
+    {
+    }
+
+    public function saveHTML(?\DOMNode $node = null)
+    {
+    }
+
+    public function saveHTMLFile(string $filename)
+    {
+    }
+
+    public function saveXML(?\DOMNode $node = null, int $options = 0)
+    {
+    }
+
+    public function schemaValidate(string $filename, int $flags = 0)
+    {
+    }
+
+    public function schemaValidateSource(string $source, int $flags = 0)
+    {
+    }
+
+    public function relaxNGValidate(string $filename)
+    {
+    }
+
+    public function relaxNGValidateSource(string $source)
+    {
+    }
+
+    public function validate()
+    {
+    }
+
+    public function xinclude(int $options = 0)
+    {
+    }
+
+    public function adoptNode(\DOMNode $node)
+    {
+    }
+
+    public function append(... $nodes) : void
+    {
+    }
+
+    public function prepend(... $nodes) : void
+    {
+    }
+}
+
+class DOMNodeList implements IteratorAggregate, Traversable, Countable
+{
+    public function count()
+    {
+    }
+
+    public function getIterator() : \Iterator
+    {
+    }
+
+    public function item(int $index)
+    {
+    }
+}
+
+class DOMNamedNodeMap implements IteratorAggregate, Traversable, Countable
+{
+    public function getNamedItem(string $qualifiedName)
+    {
+    }
+
+    public function getNamedItemNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function item(int $index)
+    {
+    }
+
+    public function count()
+    {
+    }
+
+    public function getIterator() : \Iterator
+    {
+    }
+}
+
+class DOMCharacterData extends DOMNode implements DOMChildNode
+{
+    public function appendData(string $data)
+    {
+    }
+
+    public function substringData(int $offset, int $count)
+    {
+    }
+
+    public function insertData(int $offset, string $data)
+    {
+    }
+
+    public function deleteData(int $offset, int $count)
+    {
+    }
+
+    public function replaceData(int $offset, int $count, string $data)
+    {
+    }
+
+    public function replaceWith(... $nodes) : void
+    {
+    }
+
+    public function remove() : void
+    {
+    }
+
+    public function before(... $nodes) : void
+    {
+    }
+
+    public function after(... $nodes) : void
+    {
+    }
+}
+
+class DOMAttr extends DOMNode
+{
+    public function __construct(string $name, string $value = '')
+    {
+    }
+
+    public function isId()
+    {
+    }
+}
+
+class DOMElement extends DOMNode implements DOMParentNode, DOMChildNode
+{
+    public function __construct(string $qualifiedName, ?string $value = null, string $namespace = '')
+    {
+    }
+
+    public function getAttribute(string $qualifiedName)
+    {
+    }
+
+    public function getAttributeNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function getAttributeNode(string $qualifiedName)
+    {
+    }
+
+    public function getAttributeNodeNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function getElementsByTagName(string $qualifiedName)
+    {
+    }
+
+    public function getElementsByTagNameNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function hasAttribute(string $qualifiedName)
+    {
+    }
+
+    public function hasAttributeNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function removeAttribute(string $qualifiedName)
+    {
+    }
+
+    public function removeAttributeNS(?string $namespace, string $localName)
+    {
+    }
+
+    public function removeAttributeNode(\DOMAttr $attr)
+    {
+    }
+
+    public function setAttribute(string $qualifiedName, string $value)
+    {
+    }
+
+    public function setAttributeNS(?string $namespace, string $qualifiedName, string $value)
+    {
+    }
+
+    public function setAttributeNode(\DOMAttr $attr)
+    {
+    }
+
+    public function setAttributeNodeNS(\DOMAttr $attr)
+    {
+    }
+
+    public function setIdAttribute(string $qualifiedName, bool $isId)
+    {
+    }
+
+    public function setIdAttributeNS(string $namespace, string $qualifiedName, bool $isId)
+    {
+    }
+
+    public function setIdAttributeNode(\DOMAttr $attr, bool $isId)
+    {
+    }
+
+    public function remove() : void
+    {
+    }
+
+    public function before(... $nodes) : void
+    {
+    }
+
+    public function after(... $nodes) : void
+    {
+    }
+
+    public function replaceWith(... $nodes) : void
+    {
+    }
+
+    public function append(... $nodes) : void
+    {
+    }
+
+    public function prepend(... $nodes) : void
+    {
+    }
+}
+
+class DOMText extends DOMCharacterData
+{
+    public function __construct(string $data = '')
+    {
+    }
+
+    public function isWhitespaceInElementContent()
+    {
+    }
+
+    public function isElementContentWhitespace()
+    {
+    }
+
+    public function splitText(int $offset)
+    {
+    }
+}
+
+class DOMComment extends DOMCharacterData
+{
+    public function __construct(string $data = '')
+    {
+    }
+}
+
+class DOMCdataSection extends DOMText
+{
+    public function __construct(string $data)
+    {
+    }
+}
+
+class DOMDocumentType extends DOMNode
+{
+}
+
+class DOMNotation extends DOMNode
+{
+}
+
+class DOMEntity extends DOMNode
+{
+}
+
+class DOMEntityReference extends DOMNode
+{
+    public function __construct(string $name)
+    {
+    }
+}
+
+class DOMProcessingInstruction extends DOMNode
+{
+    public function __construct(string $name, string $value = '')
+    {
+    }
+}
+
+class DOMXPath
+{
+    public function __construct(\DOMDocument $document, bool $registerNodeNS = true)
+    {
+    }
+
+    public function evaluate(string $expression, ?\DOMNode $contextNode = null, bool $registerNodeNS = true)
+    {
+    }
+
+    public function query(string $expression, ?\DOMNode $contextNode = null, bool $registerNodeNS = true)
+    {
+    }
+
+    public function registerNamespace(string $prefix, string $namespace)
+    {
+    }
+
+    public function registerPhpFunctions(string|array|null $restrict = null)
+    {
+    }
+}
+
